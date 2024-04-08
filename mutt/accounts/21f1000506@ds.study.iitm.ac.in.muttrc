@@ -1,0 +1,19 @@
+# vim: filetype=neomuttrc
+# muttrc file for account 21f1000506@ds.study.iitm.ac.in
+set realname = "21f1000506"
+set from = "21f1000506@ds.study.iitm.ac.in"
+set sendmail = "msmtp -a 21f1000506@ds.study.iitm.ac.in"
+alias me 21f1000506 <21f1000506@ds.study.iitm.ac.in>
+set folder = "/home/ozymandias/.local/share/mail/21f1000506@ds.study.iitm.ac.in"
+set header_cache = "/home/ozymandias/.cache/mutt-wizard/21f1000506_ds.study.iitm.ac.in/headers"
+set message_cachedir = "/home/ozymandias/.cache/mutt-wizard/21f1000506_ds.study.iitm.ac.in/bodies"
+set mbox_type = Maildir
+set hostname = "ds.study.iitm.ac.in"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set trash = "+Trash"
+set record = "+Sent"
+
+macro index o "<shell-escape>mailsync 21f1000506@ds.study.iitm.ac.in<enter>" "sync 21f1000506@ds.study.iitm.ac.in"
+mailboxes "=INBOX" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash"

@@ -1,0 +1,15 @@
+2023-12-30 12:43:17  root(         lfm: 102)  I  Start lfm
+2023-12-30 12:43:17  lfm(          ui: 709)  I  Support wide chars: False
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item compress_dir
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item change_owner
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item diff_file_with_backup
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item move_file
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item show_filesystems_info
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item uncompress_dir_other_pane
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item compress_uncompress_file
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item uncompress_dir
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item backup_file
+2023-12-30 12:43:17  lfm( preferences: 318)  W  KEYS: Missing Action item change_perms
+2023-12-30 12:43:17  lfm( preferences: 387)  I  Load history file from "/home/ozymandias/.config/lfm/lfm.history"
+2023-12-30 12:44:11  lfm( preferences: 392)  I  Save history file to "/home/ozymandias/.config/lfm/lfm.history"
+2023-12-30 12:44:11  root(         lfm: 118)  I  End lfm, returns: "/home/ozymandias/Desktop"

@@ -1,0 +1,8 @@
+
+return {
+    {
+        "averms/black-nvim",
+    },
+
+}
+
