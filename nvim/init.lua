@@ -24,6 +24,11 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.wo.colorcolumn = '80'
+vim.filetype.add({
+  extension = {
+    templ = "templ",
+  },
+})
 
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
