@@ -204,7 +204,8 @@ vim.o.hlsearch = false
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = ''
+-- vim.o.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -531,6 +532,11 @@ cmp.setup {
 vim.api.nvim_set_keymap('n', '<leader>t1', ':1tabnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t2', ':2tabnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t3', ':3tabnext<CR>', { noremap = true, silent = true })
+
+-- set ctrl f to invoke Format functions in normal and insert mode
+vim.api.nvim_set_keymap('n', '<C-F>', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-F>', '<C-o>:Format<CR>', { noremap = true, silent = true })
+
 
 -- Define a function to run the autopep8 command on the current buffer
 function autopep8_current_file()
