@@ -278,7 +278,7 @@ require("notify").setup({
 })
 
 require('onedark').setup {
-  style = 'warmer',
+  style = 'deep',
   transparent = false,
   toggle_style_key = "<leader>ts",
     toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'},
@@ -623,3 +623,6 @@ end
 
 M.cowboy()
 hjkl()
+
+vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true})
