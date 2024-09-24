@@ -72,7 +72,9 @@ bindsym $mod+q kill
 # start dmenu (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+b exec firefox
+bindsym $mod+b exec brave-browser-stable
+# bindsym $mod+b exec firefox
+bindsym $mod+Shift+b exec ~/firefox/firefox
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -224,6 +226,8 @@ bar {
 
 exec_always nitrogen --restore
 exec_always compton -b
+# Start the wallpaper changing script
+# exec_always /home/ozymandias/wallpaper_script.sh
 
 gaps inner 15
 # gaps outer 20
