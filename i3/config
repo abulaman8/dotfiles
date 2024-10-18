@@ -41,6 +41,7 @@ font pango:Hack Nerd Font Mono 10
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -74,7 +75,7 @@ bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+b exec brave-browser-stable
 # bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec ~/firefox/firefox
+bindsym $mod+Shift+b exec firefox
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -179,6 +180,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your computer? ' -B 'Yes, shutdown' 'shutdown now'"
 
 bindsym $mod+Shift+x exec ~/shutdown_prompt.sh
+bindsym $mod+Shift+y exec ~/.lockscreen.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -235,3 +237,10 @@ gaps inner 15
 bindsym $mod+XF86MonBrightnessUp exec sudo light -A 10
 bindsym $mod+XF86MonBrightnessDown exec sudo light -U 10
 smart_gaps on
+for_window [class="Gnome-screenshot"] floating enable
+for_window [floating] move position center
+# Make the Firefox file save dialog float and resize to fit screen
+for_window [class="Xdg-desktop-portal-gtk"] floating enable
+for_window [class="Xdg-desktop-portal-gtk"] resize set 80 ppt 80 ppt
+for_window [class="Xdg-desktop-portal-gtk"] move position center
+
