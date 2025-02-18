@@ -4,8 +4,10 @@
 # Path to your Oh My Zsh installation.
 fzf_nvim() {
   local file
-  file=$(find . -type f | fzf --height 40% --reverse --inline-info --preview "batcat --style=numbers --color=always {}") || return
-  nvim "$file"
+  file=$(find . \( -path './.git' -o -path './venv' -o -path './.venv' \) -prune -o -type f -print | \
+    fzf --height 40% --reverse --inline-info --preview "batcat --style=numbers --color=always {}") || return
+  [ -n "$file" ] && nvim "$file" < /dev/tty
+  zle reset-prompt
 }
 
 zle -N fzf_nvim
@@ -118,3 +120,6 @@ fi
 alias vim="nvim"
 alias mmd="sudo ldmtool create all"
 eval "$(starship init zsh)"
+
+. "$HOME/.cargo/env"
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/snapd/desktop

@@ -42,13 +42,18 @@ font pango:Hack Nerd Font Mono 10
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off
+
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xautolock -time 10 -locker "/home/ozymandias/.lockscreen.sh"
+
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -76,6 +81,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+b exec brave-browser-stable
 # bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox
+bindsym $mod+a exec pavucontrol
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
